@@ -1,0 +1,42 @@
+from setuptools import setup, find_packages
+
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+
+with open("requirements.txt", "r", encoding="utf-8") as fh:
+    requirements = [line.strip() for line in fh if line.strip() and not line.startswith("#")]
+
+setup(
+    name="airflow-etl-config",
+    version="1.0.1",
+    author="Farley Berruecos Gómez",
+    author_email="Farleyberruecos@gmail.com",
+    description="Manage Apache Airflow configuration variables using Python files",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://github.com/farleyberruecos/airflow-etl-config.git",
+    package_dir={'': 'src'},
+    packages=find_packages(where='src'),
+    classifiers=[
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+    ],
+    python_requires=">=3.7",
+    install_requires=requirements,
+    keywords="airflow configuration config variables settings",
+    project_urls={
+        "Bug Reports": "https://github.com/tuusuario/airflow-config/issues",
+        "Source": "https://github.com/tuusuario/airflow-config",
+        "Documentation": "https://github.com/tuusuario/airflow-config/blob/main/README.md",
+    },
+    include_package_data=True,
+    zip_safe=False,
+)
