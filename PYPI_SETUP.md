@@ -31,6 +31,12 @@ chmod +x create_pypirc_temp.sh
 ./create_pypirc_temp.sh
 ```
 
+**¿Cuándo usar este script?**
+- Úsalo **SOLO UNA VEZ** al configurar tu entorno por primera vez.
+- Su propósito es crear el archivo `~/.pypirc` de forma segura sin que tengas que editar archivos manualmente.
+- Una vez ejecutado, el script se borra a sí mismo para no dejar tus tokens expuestos en el directorio del proyecto.
+- Si ya tienes configurado `~/.pypirc`, no necesitas usar este script.
+
 ### Opción B: Configuración Manual
 
 Si prefieres hacerlo manualmente, ejecuta estos comandos:
@@ -108,6 +114,17 @@ make publish
 # twine upload dist/*
 ```
 
+> [!NOTE]
+> Si encuentras errores de "externally-managed-environment" (común en sistemas Linux modernos), usa el entorno virtual local:
+> ```bash
+> # Instalar build y twine en el venv si no están
+> venv/bin/pip install build twine
+> 
+> # Construir y subir usando el python del venv
+> venv/bin/python -m build
+> venv/bin/twine upload dist/*
+> ```
+
 ## 🔍 Verificar en PyPI
 
 Después de subir, verifica en:
@@ -125,6 +142,8 @@ Después de subir, verifica en:
 
 Para futuras actualizaciones:
 
-1. Actualiza la versión en `setup.py` (ej: `1.0.0` → `1.0.1`)
-2. Reconstruye: `make build`
-3. Sube: `make publish-test` o `make publish`
+1. **IMPORTANTE**: Actualiza la versión en `setup.py` (ej: `1.0.1` → `1.0.2`).
+   - PyPI **NO permite** sobrescribir versiones. Si intentas subir la misma versión (incluso si borraste el archivo en PyPI), fallará.
+   - Siempre debes incrementar el número de versión antes de publicar cambios.
+2. Reconstruye: `make build` (o `venv/bin/python -m build`)
+3. Sube: `make publish` (o `venv/bin/twine upload dist/*`)

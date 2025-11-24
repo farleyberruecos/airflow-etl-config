@@ -8,7 +8,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name="airflow-etl-config",
-    version="1.0.1",
+    version="1.0.2",
     author="Farley Berruecos Gómez",
     author_email="Farleyberruecos@gmail.com",
     description="Manage Apache Airflow configuration variables using Python files",
@@ -33,9 +33,9 @@ setup(
     install_requires=requirements,
     keywords="airflow configuration config variables settings",
     project_urls={
-        "Bug Reports": "https://github.com/tuusuario/airflow-config/issues",
-        "Source": "https://github.com/tuusuario/airflow-config",
-        "Documentation": "https://github.com/tuusuario/airflow-config/blob/main/README.md",
+        "Bug Reports": "https://github.com/farleyberruecos/airflow-etl-config.git/issues",
+        "Source": "https://github.com/farleyberruecos/airflow-etl-config.git",
+        "Documentation": "https://github.com/farleyberruecos/airflow-etl-config.git/blob/main/README.md",
     },
     include_package_data=True,
     zip_safe=False,

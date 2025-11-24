@@ -27,12 +27,12 @@ from setuptools import setup, find_packages
 setup(
     name="airflow-etl-config",  # Nombre en PyPI (con guiones)
     version="1.0.0",
-    author="Tu Nombre",
-    author_email="tu.email@example.com",
+    author="Farley Berruecos Gómez",
+    author_email="farleyberruecos@gmail.com",
     description="Python library for managing Apache Airflow configuration variables",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/tuusuario/airflow-config",
+    url="https://github.com/farleyberruecos/airflow-etl-config.git",
     package_dir={'': 'src'},
     packages=find_packages(where='src'),
     classifiers=[
@@ -326,9 +326,9 @@ pip show airflow-etl-config
 Name: airflow-etl-config
 Version: 1.0.0
 Summary: Python library for managing Apache Airflow configuration variables
-Home-page: https://github.com/tuusuario/airflow-config
+Home-page: https://github.com/farleyberruecos/airflow-etl-config.git
 Author: Tu Nombre
-License: UNKNOWN
+License: MIT License
 Location: ...
 Requires:
 Required-by:
